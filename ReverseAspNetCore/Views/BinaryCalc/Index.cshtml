@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewData["Title"] = "Binary Calculator";
+}
+
+<h1>Calculator</h1>
+<h2>Binary-, Octa-, Deci- & Hexadezimal</h2>
+<form action="/BinaryCalc/postBinaryCalc" method="post">
+    <label for="inputI">Input: </label>
+    <input type="text" placeholder="" name="inputI" />
+
+    <select name="selectCalcType">
+        <option value="isDec">Decimal</option>
+        <option value="isBin">Binary</option>
+        <option value="isOct">Octa</option>
+        <option value="isHex">Hex</option>
+    </select>
+
+    <button type="submit">Submit</button>
+</form>
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th>Decimal</th>
+            <th>Binary</th>
+            <th>Octa</th>
+            <th>Hex</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>@ViewData["outputDec"]</td>
+            <td>@ViewData["outputBin"]</td>
+            <td>@ViewData["outputOct"]</td>
+            <td>@ViewData["outputHex"]</td>
+        </tr>
+    </tbody>
+</table>

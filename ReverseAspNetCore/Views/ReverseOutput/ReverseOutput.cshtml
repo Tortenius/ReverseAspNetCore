@@ -1,0 +1,18 @@
+﻿
+@{
+    ViewData["Title"] = "ReverseOutput";
+}
+
+<h1>ReverseOutput</h1>
+<form action="/ReverseOutput/postReverseOutput" method="post">
+    <label for="inputI">Input: </label>
+    <input type="text" placeholder="Pls enter your text here..." name="inputI" />
+
+    <input type="checkbox" id="isReverse" name="isReverse" checked>
+    <label for="isReverse">Reverse</label>
+
+    <button type="submit">Submit</button>
+</form>
+
+<p>output: @ViewData["output"]</p>
+
