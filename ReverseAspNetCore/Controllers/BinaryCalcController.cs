@@ -10,9 +10,6 @@ namespace ReverseAspNetCore.Controllers
     public class BinaryCalcController : Controller
     {
         private Calculator calculator;
-        public string dec;
-        public string bin;
-
 
         public IActionResult Index()
         {

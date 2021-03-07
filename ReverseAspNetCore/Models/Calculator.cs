@@ -75,7 +75,6 @@ namespace ReverseAspNetCore.Models
                 decimal deci = Convert.ToDecimal(this.numberInput);
                 string result = "";
                 decimal tmp;
-
             
                 for (int i = 1; i > 0; i++)
                 {
@@ -84,15 +83,18 @@ namespace ReverseAspNetCore.Models
                     {
                         string tmpResult = tmp.ToString();
                         bool containsDec = tmpResult.Contains(",");
-                        if (containsDec)
+                        bool containsDecAlternative = tmpResult.Contains(".");
+                        if (containsDec || containsDecAlternative)
                         {
                             int convertToInt = Convert.ToInt32(Math.Floor(tmp));
-                            result = result.Insert(result.Length, "1");
+                            result += "1";
+                            //result = result.Insert(result.Length, "1");
                             deci = Convert.ToDecimal(convertToInt);
                         }
                         else
                         {
-                            result = result.Insert(result.Length, "0");
+                            result += "0";
+                            //result = result.Insert(result.Length, "0");
                             deci = tmp;
                         }
                     }
