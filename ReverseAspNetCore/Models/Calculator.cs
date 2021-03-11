@@ -66,8 +66,6 @@ namespace ReverseAspNetCore.Models
             this.dec = this.calcBinToDec();
             this.oct = this.calcBinToOct();
         }
-
-
         public string calcBinFromDec()
         {
             try
@@ -150,6 +148,7 @@ namespace ReverseAspNetCore.Models
                 }
             };
 
+            result = this.Reverse(result);
             return result;
         }
         public string calcBinFromHex()

@@ -54,42 +54,5 @@ namespace ReverseAspNetCore.Controllers
 
             return result;
         }
-
-        private void save(string text)
-        {
-            try
-            {
-                using (FileStream fs = System.IO.File.Create(this.path))
-                {
-                    byte[] info = new UTF8Encoding(true).GetBytes(text);
-                    // Add some information to the file.
-                    fs.Write(info, 0, info.Length);
-                }
-
-                System.IO.File.WriteAllText(this.path, text);
-            }
-            catch (Exception ex)
-            {
-                
-            }
-        }
-
-        private string read()
-        {
-            string result = "";
-            try
-            {
-                foreach (string line in System.IO.File.ReadLines(this.path))
-                {
-                    result += line;
-                }
-            }
-            catch(Exception e)
-            {
-                result = "";
-            }
-            
-            return result;
-        }
     }
 }
